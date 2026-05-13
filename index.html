@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="app-title">Dice Roller</h1>
+    <p class="subtitle">Roll any dice — D4 to D20</p>
+
+    <!-- DICE SELECTOR -->
+    <div class="dice-grid">
+      <button class="dice-btn active" onclick="selectDice(4, this)">D4</button>
+      <button class="dice-btn" onclick="selectDice(6, this)">D6</button>
+      <button class="dice-btn" onclick="selectDice(8, this)">D8</button>
+      <button class="dice-btn" onclick="selectDice(10, this)">D10</button>
+      <button class="dice-btn" onclick="selectDice(12, this)">D12</button>
+      <button class="dice-btn" onclick="selectDice(20, this)">D20</button>
+    </div>
+
+    <!-- COUNT SELECTOR -->
+    <div class="count-row">
+      <label>Number of dice:</label>
+      <div class="count-btns">
+        <button class="count-btn active" onclick="selectCount(1, this)">1</button>
+        <button class="count-btn" onclick="selectCount(2, this)">2</button>
+        <button class="count-btn" onclick="selectCount(3, this)">3</button>
+        <button class="count-btn" onclick="selectCount(4, this)">4</button>
+        <button class="count-btn" onclick="selectCount(5, this)">5</button>
+      </div>
+    </div>
+
+    <!-- ROLL DISPLAY -->
+    <div class="roll-card" id="rollCard">
+      <div class="dice-faces" id="diceFaces">
+        <div class="dice-face" id="mainDice">?</div>
+      </div>
+      <div class="roll-total hidden" id="rollTotal"></div>
+    </div>
+
+    <!-- ROLL BUTTON -->
+    <button class="btn-roll" id="rollBtn" onclick="rollDice()">🎲 Roll Dice</button>
+
+    <!-- STATS -->
+    <div class="stats-row" id="statsRow">
+      <div class="stat-box">
+        <span id="totalRolls">0</span>
+        <label>Total Rolls</label>
+      </div>
+      <div class="stat-box">
+        <span id="highestRoll">—</span>
+        <label>Highest</label>
+      </div>
+      <div class="stat-box">
+        <span id="lowestRoll">—</span>
+        <label>Lowest</label>
+      </div>
+      <div class="stat-box">
+        <span id="avgRoll">—</span>
+        <label>Average</label>
+      </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="history-card">
+      <div class="history-header">
+        <h3>Roll History</h3>
+        <button onclick="clearHistory()">Clear</button>
+      </div>
+      <ul class="history-list" id="historyList">
+        <li class="history-empty">No rolls yet — roll some dice!</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer>Day 17 of 120 · Kishalaya Sarangi · NIT Rourkela</footer>
+  <script src="script.js"></script>
+</body>
+</html>
